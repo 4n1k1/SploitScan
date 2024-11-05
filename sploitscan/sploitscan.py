@@ -750,10 +750,9 @@ def is_valid_cve_id(cve_id):
 
 
 def generate_filename(cve_ids, extension):
-    timestamp = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
     cve_part = "_".join(cve_ids[:3]) + \
         ("_and_more" if len(cve_ids) > 3 else "")
-    return f"{timestamp}_{cve_part}_export.{extension}"
+    return f"{cve_part}_export.{extension}"
 
 
 def datetimeformat(value, format="%Y-%m-%d"):
